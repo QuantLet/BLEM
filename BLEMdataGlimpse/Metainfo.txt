@@ -3,7 +3,7 @@ Name of Quantlet: BLEMdataGlimpse
 
 Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
 
-Description: Generates csv-file with extract of the input data to exemplify data structure in table format
+Description: Generates csv-file with extract of the input data to exemplify data structure in table format.
 
 Keywords: table, csv-file, energy data, extract, glimpse, time series, energy production, energy consumption, data snippet
 
@@ -27,6 +27,6 @@ Datafile:
 - consumer-00000056.csv
 - producer-00000089.csv
 
-Input: Dataset containing time series of energy consumer/prosumer's electricity readings and timestamps.
+Input: dataset containing time series of energy consumer/prosumer's electricity readings and timestamps
 
-Output: Dataset containing extract of the input data within specified time interval.
+Output: dataset containing extract of the input data within specified time interval
