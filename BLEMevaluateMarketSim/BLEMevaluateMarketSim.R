@@ -55,7 +55,7 @@ eval_table = data.frame("X1" = c("Equilibrium price (in EURct)",
 
 loss_table = data.frame("X1" = c("Cost without LEM (in EUR)",
                                  "Cost predicted values (in EUR)",
-                                 "Cost true valuesa (in EUR)",
+                                 "Cost true values (in EUR)",
                                  "Savings due to LEM (in %)",
                                  "Loss due to pred. errors (in %)"))
 

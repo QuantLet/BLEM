@@ -58,7 +58,7 @@ for(i in (1:length(files))){
     
     # Get true values
     targets = getTargets(path   = path,
-                         data   = substring(files[i], 1, 17),
+                         id     = substring(files[i], 1, 17),
                          return = "consumption",
                          min    = "2017-10-01 00:03",
                          max    = "2018-01-01 00:00")
