@@ -131,7 +131,7 @@ for(id in files) {
     
     # Specify callbacks
     callbacks = list(
-        callback_tensorboard("logs/"%&%run),
+        callback_tensorboard("logs/"%&%id),
         
         callback_early_stopping(
             monitor   = "val_loss",
@@ -148,7 +148,7 @@ for(id in files) {
     
     
     # Train model            
-    tensorboard("logs/"%&%run)
+    tensorboard("logs/"%&%id)
     
     system.time(
         history_simple <- model_best %>% # does not work with '='
