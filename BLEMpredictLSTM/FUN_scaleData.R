@@ -3,6 +3,7 @@
 ## Function: scaleData
 ## Author: Michael Kostmann
 
+
 ## Args:     data     - time tibble with time series data
 ##           option   - what kind of transformation should be applied to the
 ##                      data: "normalize" (scale between 0 and 1), "log-
@@ -19,10 +20,12 @@
 ##                      matrix with transformed values
 
 
-scaleData = function(data, option = "normalize",
-                      split = "2017-10-01 00:00",
-                      min = NULL, max = NULL,
-                      time.tbl = TRUE) {
+scaleData = function(data,
+                     option   = "normalize",
+                     split    = "2017-10-01 00:00",
+                     min      = NULL,
+                     max      = NULL,
+                     time.tbl = TRUE) {
     
     # Load packages
     packages = c("tidyverse", "tibbletime", "rlang", "lubridate")
@@ -36,7 +39,7 @@ scaleData = function(data, option = "normalize",
     
     # Get split index
     split_idx = interval(ymd_hm(201701010000, tz = "CET"),
-                          ymd_hm(split, tz = "CET"))/dminutes(3)
+                         ymd_hm(split, tz = "CET"))/dminutes(3)
     
     # Set min and max of training data
     if(option == "normalize"){
@@ -45,8 +48,15 @@ scaleData = function(data, option = "normalize",
     }
     
     if(option == "log-normalize"){
-        min_log = apply(x, 2, function(x) {min(log(x[1:split_idx]))})
-        max_log = apply(x, 2, function(x) {max(log(x[1:split_idx]))}) 
+        min_log = apply(x, 2, function(x) {
+            log_x = log(x[x != 0])
+            min(log_x)
+        })
+        
+        max_log = apply(x, 2, function(x) {
+            log_x = log(x[x != 0])
+            max(log_x)
+        }) 
     }
     
     # Scale data: normalize between 0 and 1, normalize log-values between 0
@@ -56,36 +66,36 @@ scaleData = function(data, option = "normalize",
                (x - min) / (max - min)}),
            
            "log-normalize" = out <- apply(x, 2, function(x) {
-               x <- log(x)
+               x[x != 0] = log(x[x != 0])
                (x - min_log) / (max_log - min_log)
-               }),
+           }),
            
            "unscale"       = out <- apply(x, 2, function(x) {
                x * (max - min) + min
-               }),
+           }),
            
            "unscale_log"   = out <- apply(x, 2, function(x) {
-               x <- exp(x)
+               x[x !=0 ] = exp(x[x != 0])
                x * (max - min) + min
-               })
+           })
     )
     
     # Bind index to out data
     if(time.tbl == TRUE) {
-        out <- cbind(data[, idx_col], out) %>%
+        out = cbind(data[, idx_col], out) %>%
             as_tbl_time(index = time)
     }
     
     # Return transformed data
     switch(option,
-           "normalize" = return(list("data" = out,
-                                     "min" = min,
-                                     "max" = max)),
+           "normalize"     = return(list("data" = out,
+                                         "min"  = min,
+                                         "max"  = max)),
            "log-normalize" = return(list("data" = out,
-                                         "min" = min_log,
-                                         "max" = max_log)),
-           "unscale" = return(out),
-           "unscale_log" = return(out)
+                                         "min"  = min_log,
+                                         "max"  = max_log)),
+           "unscale"       = return(out),
+           "unscale_log"   = return(out)
     )
 }
 
