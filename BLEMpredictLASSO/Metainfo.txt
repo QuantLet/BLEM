@@ -1,0 +1,30 @@
+
+Name of Quantlet: BLEMpredictLASSO
+
+Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
+
+Description: fits LASSO regression models for 99 consumer and 12 prosumer data sets with k-fold cross-validatio, uses fitted models to make predictions in testing period and calculates various error measures for model performance
+
+Keywords: household energy prediction, energy consumption, energy production, LASSO, machine learning, cross-validation, regression model, error measures, model performance, MAE, MAPE, MASE, RMSE, NRMSE
+
+Author: Michael Kostmann
+
+See also:
+- BLEMdataGlimpse
+- BLEMdescStatEnergyData
+- BLEMevaluateEnergyPreds
+- BLEMevaluateMarketSim
+- BLEMmarketSimulation
+- BLEMplotEnergyData
+- BLEMplotEnergyPreds
+- BLEMplotPredErrors
+- BLEMpredictLSTM
+- BLEMpredictNaive  
+
+Submitted:  26.10.2018
+
+Input: 100 consumer and prosumer datasets containing energy readings for one year (2017) in 3-minute intervals
+
+Output:
+- predictions of energy consumption/production in 15-minute intervals (csv-files)
+- error measures calculated on testing data (Rdata-files)

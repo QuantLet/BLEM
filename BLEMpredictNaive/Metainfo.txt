@@ -1,0 +1,31 @@
+
+Name of Quantlet: BLEMpredictNaive
+
+Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
+
+Description: generates energy consumption and production forecasts with persistence model (naive predictor) for 99 consumer and 12 prosumer datasets and calculates various error measures against true consumption values in specified testing period
+
+Keywords: household energy prediction, energy consumption, enerygproduction, naive predictor, persistence model, benchmark model, error measures, model performance, MAE, MAPE, MASE, RMSE, NRMSE
+
+Author: Michael Kostmann
+
+See also:
+- BLEMdataGlimpse
+- BLEMdescStatEnergyData
+- BLEMevaluateEnergyPreds
+- BLEMevaluateMarketSim
+- BLEMmarketSimulation
+- BLEMplotEnergyData
+- BLEMplotEnergyPreds
+- BLEMplotPredErrors
+- BLEMpredictLASSO
+- BLEMpredictLSTM
+- BLEMpredictNaive  
+
+Submitted:  26.10.2018
+
+Input: 100 consumer and prosumer datasets containing energy readings for one year (2017) in 3-minute intervals
+
+Output:
+- predictions of energy consumption/production in 15-minute intervals (csv-files)
+- error measures calculated on testing data (Rdata-files)

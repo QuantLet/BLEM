@@ -1,0 +1,41 @@
+
+Name of Quantlet: BLEMevaluateEnergyPreds
+
+Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
+
+Description: Generates graphs and tables to evaluate prediction performance of naive predictor, LASSO, and LSTM models.
+
+Keywords: mean absolute error, MAE, mean absolute percentage error, MAPE, root mean squared error, RMSE, normalised root mean squared error, NRMSE, mean absolute scaled error, MASE, heatmap, boxplot, error analysis, prediction accuracy, model performance, energy prediction, average performance
+
+Author: Michael Kostmann
+
+See also:
+- BLEMdataGlimpse
+- BLEMdescStatEnergyData
+- BLEMevaluateMarketSim
+- BLEMmarketSimulation
+- BLEMplotEnergyData
+- BLEMplotEnergyPreds
+- BLEMplotPredErrors
+- BLEMpredictLASSO
+- BLEMpredictLSTM
+- BLEMpredictNaive  
+
+Submitted:  26.10.2018
+
+Datafile: for your data sets - delete if not used
+
+Input:
+- consumer
+    - naive_predictions.csv
+    - LASSO_predictions.csv
+    - LSTM_predictions.csv
+- prosumer
+    - naive_predictions.csv
+    - LASSO_predictions.csv
+    - LSTM_predictions.csv
+
+Output:
+- boxplots and heatmaps of naive, LASSO, and LSTM model performance according to MAE, MAPE, MASE, RMSE, and NRMSE on 88 consumer data sets
+- boxplots and heatmaps of naive, LASSO, and LSTM model performance according to MAE, MASE, and RMSE on 12 prosumer data sets
+- tables summarising the model performance across all consumer and prosumer data sets 

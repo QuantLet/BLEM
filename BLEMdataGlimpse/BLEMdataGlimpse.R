@@ -7,6 +7,7 @@
 # Load packages
 packages = c("data.table",
              "lubridate",
+             "tidyverse",
              "tibbletime")
 invisible(lapply(packages, library, character.only = TRUE))
 
@@ -39,7 +40,7 @@ to   = "2017-09-20 12:33:00"
 
 data %>%
     filter_time(from ~ to) %>%
-    write.csv(dataset_id%&%"_glimpse.csv")
+    write.csv("output/"%&%dataset_id%&%"_glimpse.csv")
 
 
 ## end of file##
