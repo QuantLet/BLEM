@@ -3,7 +3,7 @@ Name of Quantlet: BLEMplotEnergyData
 
 Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
 
-Description: generates plots of energy consumption/production/both time series of energy consumers/prosumers generated from energy readings in 3-minute intervals
+Description: Generates plots of energy consumption/production/both time series of energy consumers/prosumers generated from energy readings in 3-minute intervals.
 
 Keywords: energy consumption, energy production, consumer, prosumer, local energy trading, time series graph, energy readings, household, plot
 
