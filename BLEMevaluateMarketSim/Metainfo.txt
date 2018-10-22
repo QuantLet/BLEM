@@ -25,8 +25,8 @@ Submitted:  26.10.2018
 
 Input:
 - data: 100 consumer and 100 prosumer data sets containing electricity readings in 3-minute intervals (csv-files)
-- market outcomes: market simulations with true and predicted electricity consumption values in three different supply scenarios (balanced, over-, and undersupply) (RData-files)
 - predictions: 15-minute interval prediction of electricity consumption for every consumer forecasted with LASSO model (csv-file)
+- market outcomes: market simulations with true and predicted electricity consumption values in three different supply scenarios (balanced, over-, and undersupply) (RData-files)
 
 Output:
 - barplots showing savings due to participation in local energy market and loss due to prediction errors in local energy market in three different supply scenarios
