@@ -27,6 +27,6 @@ Datafile:
 - 100 consumer datasets (named "consumer-00000xxx.csv")
 - 100 prosumer datasets (named "producer-00000xxx.csv")
 
-Input: 100 consumer/prosumer data sets containing energy consumption/production in 3-minute intervals for one year (2017).
+Input: 100 consumer/prosumer data sets containing energy consumption/production in 3-minute intervals for one year (2017)
 
-Output: csv-file containing summary statistics across all consumer/prosumer datasets to generate Latex-table, boxplots of consumer/prosumer's energy consumption/production distribution, barplots of consumer/prosumer's total energy consumption/production in 2017.
+Output: csv-file containing summary statistics across all consumer/prosumer datasets to generate Latex-table, boxplots of consumer/prosumer's energy consumption/production distribution, barplots of consumer/prosumer's total energy consumption/production in 2017
