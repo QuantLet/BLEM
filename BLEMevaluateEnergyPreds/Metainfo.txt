@@ -23,17 +23,19 @@ See also:
 
 Submitted:  26.10.2018
 
-Datafile: for your data sets - delete if not used
+Datafile:
+- 100 consumer datasets (named "consumer-00000xxx.csv")
+- 100 prosumer datasets (named "producer-00000xxx.csv")
+- consumer predictions:
+    - naive_predictions.csv
+    - LASSO_predictions.csv
+    - LSTM_predictions.csv
+- prosumer predictions
+    - naive_predictions.csv
+    - LASSO_predictions.csv
+    - LSTM_predictions.csv
 
-Input:
-- consumer
-    - naive_predictions.csv
-    - LASSO_predictions.csv
-    - LSTM_predictions.csv
-- prosumer
-    - naive_predictions.csv
-    - LASSO_predictions.csv
-    - LSTM_predictions.csv
+Input: true consumption and production data and predicted consumption and production data
 
 Output:
 - boxplots and heatmaps of naive, LASSO, and LSTM model performance according to MAE, MAPE, MASE, RMSE, and NRMSE on 88 consumer data sets
