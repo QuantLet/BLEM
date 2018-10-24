@@ -53,8 +53,8 @@ p = ggplot(data = data,
            mapping = aes(time, value)) +
     geom_line() +
     theme_classic(base_size = 12) +
-    ylab("Squared relative error in kWh per 15-minute interval") +
-    xlab("Timestamp")
+    ylab("squared relative error") +
+    xlab("timestamp")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
 ggsave("graphs/c027_squarederrors.pdf",

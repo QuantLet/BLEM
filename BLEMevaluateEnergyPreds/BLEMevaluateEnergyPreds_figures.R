@@ -67,7 +67,7 @@ for(i in measures_c) {
               axis.text.x  = element_text(angle = 90,
                                           vjust = 0.5,
                                           size  = 8)) +
-        xlab("Consumer ID")
+        xlab("consumer ID")
     
     plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
     ggsave("graphs/c_heatmap_"%&%i%&%".pdf",
@@ -140,7 +140,7 @@ for(i in measures_median) {
                axis.text.x  = element_text(angle = 90,
                                            vjust = 0.5,
                                            size  = 8)) +
-         xlab("Consumer ID")
+         xlab("consumer ID")
     
     plot_grid(p_title1, p1, ncol = 1, rel_heights = c(0.15, 1))
     ggsave("graphs/c_heatmap_"%&%i%&%".pdf",
@@ -198,7 +198,7 @@ for(i in measures_p) {
               axis.text.x  = element_text(angle = 90,
                                           vjust = 0.5,
                                           size  = 8)) +
-        xlab("Prosumer ID")
+        xlab("prosumer ID")
     
     plot_grid(p_title2, p2, ncol = 1, rel_heights = c(0.15, 1))
     ggsave("graphs/p_heatmap_"%&%i%&%".pdf",
