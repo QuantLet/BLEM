@@ -1,5 +1,5 @@
 
-Name of Quantlet: BLEMpredictLSTM
+Name of Quantlet: BLEMtuneLSTM
 
 Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
 
