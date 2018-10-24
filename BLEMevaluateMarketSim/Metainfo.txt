@@ -1,7 +1,6 @@
-
 Name of Quantlet: BLEMevaluateMarketSim
 
-Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
+Published in: 'Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets'
 
 Description: Generates plots and tables to evaluate the outcomes of three market simulations of a blind double auction as implemented in a smart contract by Mengelkamp et al. (2018) with and without predictions of energy consumption values.
 
