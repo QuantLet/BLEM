@@ -37,7 +37,7 @@ predictions_LASSO = predictions_LASSO_all[, 11]
 predictions_naive = predictions_naive_all[, 11]
 
 # Get true values
-targets = getTargets(path    = "data/consumer/",
+targets = getTargets(path    = "../data/consumer/",
                       id     = "consumer-00000011",
                       return = "consumption",
                       min    = "2017-10-01 00:03",
@@ -73,7 +73,7 @@ p       = data_long %>%
     xlab("timestamp")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/c011_pred_cons.pdf", height = (8.267/2), width = 11.692)
+ggsave("c011_pred_cons.jpg", height = (8.267/2), width = 11.692)
 
 
 
@@ -95,7 +95,7 @@ predictions_LASSO = predictions_LASSO_all[, 2]
 predictions_naive = predictions_naive_all[, 2]
 
 # Get true values
-targets = getTargets(path    = "data/prosumer/",
+targets = getTargets(path    = "../data/prosumer/",
                       id     = "producer-00000024",
                       return = "production",
                       min    = "2017-10-01 00:03",
@@ -131,7 +131,7 @@ p = data_long %>%
     xlab("timestamp")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/p024_pred_prod.pdf", height = (8.267/2), width = 11.692)
+ggsave("p024_pred_prod.jpg", height = (8.267/2), width = 11.692)
 
 
 ## end of file ##

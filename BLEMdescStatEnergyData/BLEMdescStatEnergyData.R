@@ -27,7 +27,7 @@ options(scipen = 999)
 
 
 # Load data with consumption or production values
-data_cons = getData(path   ="data/consumer/",
+data_cons = getData(path   ="../data/consumer/",
                     data   = "all",
                     return = "consumption")
 
@@ -53,7 +53,7 @@ which(total_c[order(total_c, decreasing = TRUE)] == total_c["c082_cons"])
 
 # Plot distribution of total consumption
 id_cons    = gsub(".*?([0]{5})([0-9]{3}).*", "c\\2",
-                  list.files(path    = "data/consumer/",
+                  list.files(path    = "../data/consumer/",
                              pattern = "*.csv"))[-26]
 
 df_total_c = data.frame(total_c, id_cons)
@@ -74,7 +74,7 @@ p          = df_total_c %>%
     xlab("consumer ID")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/consumer_totalconsumption.pdf",
+ggsave("consumer_totalconsumption.jpg",
        height = 8.267/2, width = 11.692)
 
 # Share of zero consumption measurements
@@ -113,8 +113,11 @@ p1 = data_cons_long %>%
     xlab("consumer ID")
 
 plot_grid(p_title1, p1, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/consumer_boxplots_consumption.jpg",
+ggsave("consumer_boxplots_consumption.jpg",
        height = 8.267, width = 11.692)
+
+# Needed as break as ggsave otherwise corrupts the follwoing function
+Sys.sleep(0.1)
 
 
 ### PROSUMER ###
@@ -123,7 +126,7 @@ ggsave("graphs/consumer_boxplots_consumption.jpg",
 ### Consumption
 
 # Load data with consumption or production values
-data_pros_c  = getData(path   = "data/prosumer/",
+data_pros_c  = getData(path   = "../data/prosumer/",
                        data   = "all",
                        return = "consumption")
 
@@ -148,7 +151,8 @@ total_pros_c[order(total_pros_c, decreasing = TRUE)]
 
 # Plot distribution of total consumption
 id_pros         = gsub(".*?([0]{5})([0-9]{3}).*", "p\\2",
-                       list.files(path = "data/prosumer/", pattern = "*.csv"))
+                       list.files(path    = "../data/prosumer/",
+                                  pattern = "*.csv"))
 
 df_total_pros_c = data.frame(total_pros_c, id_pros)
 
@@ -168,7 +172,7 @@ p2              = df_total_pros_c %>%
     xlab("prosumer ID")
 
 plot_grid(p_title2, p2, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/prosumer_totalconsumption.pdf",
+ggsave("prosumer_totalconsumption.jpg",
        height = 8.267/2, width = 11.692)
 
 # Share of zero consumption measurements
@@ -206,17 +210,18 @@ p2       = data_pros_c_long %>%
     xlab("prosumer ID")
 
 plot_grid(p_title2, p2, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/prosumer_boxplots_consumption.jpg",
+ggsave("prosumer_boxplots_consumption.jpg",
        height = 8.267, width = 11.692)
 
-Sys.sleep(1)
+# Needed as break as ggsave otherwise corrupts the follwoing function
+Sys.sleep(0.1)
 
 
 
 ### Production
 
 # Load data with consumption or production values
-data_pros_p  = getData(path   = "data/prosumer/",
+data_pros_p  = getData(path   = "../data/prosumer/",
                        data   = "all",
                        return = "production")
 
@@ -238,7 +243,8 @@ table(total_pros_p)
 
 # Plot distribution of total production
 id              = gsub(".*?([0]{5})([0-9]{3}).*", "p\\2",
-                       list.files(path = "data/prosumer/", pattern = "*.csv"))
+                       list.files(path    = "../data/prosumer/",
+                                  pattern = "*.csv"))
 
 df_total_pros_p = data.frame(total_pros_p, id)
 
@@ -257,7 +263,7 @@ p4              = df_total_pros_p %>%
     xlab("prosumer ID")
 
 plot_grid(p_title3, p4, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/prosumer_totalproduction.pdf",
+ggsave("prosumer_totalproduction.jpg",
        height = 8.267/2, width = 11.692)
 
 # Save table with summary statistics
@@ -268,5 +274,5 @@ stats_table_out = data.frame("X1" = c("Consumer: consumption",
 
 write.csv(stats_table_out, "summarystats_total.csv")
 
-## end of file ##
 
+## end of file ##

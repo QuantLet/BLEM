@@ -27,8 +27,8 @@ invisible(lapply(functions, source))
 ### PLOT ONLY CONSUMPTION VALUES ###
 
 # Specify consumer or prosumer directory
-path = "data/consumer/"
-#path = "data/prosumer/"
+path = "../data/consumer/"
+#path = "../data/prosumer/"
 
 # Load data with consumption or production values
 data = getData(path,
@@ -108,7 +108,7 @@ for(id in datasets) {
         labs(title = "One day (13/05/2017 00:00 - 13/05/2017 23:57)")
     
     plot_grid(p_title1, p1, p2, p3, ncol = 1, rel_heights = c(0.15, 1, 1, 1))
-    ggsave("graphs/"%&%id%&%format, height = 8.267, width = 11.692)
+    ggsave(""%&%id%&%format, height = 8.267, width = 11.692)
     
 }
 
@@ -117,7 +117,7 @@ for(id in datasets) {
 ### PLOT CONSUMPTION AND PRODUCTION VALUES IN ONE GRAPH ###
 
 # Specify consumer or prosumer directory
-path = "data/prosumer/"
+path = "../data/prosumer/"
 
 # Load data with consumption or production values
 data_cons = getData(path, data = "all", return = "consumption")
@@ -204,7 +204,7 @@ for(id in datasets_cp) {
         labs(title = "One day (13/05/2017 00:00 - 13/05/2017 23:57)")
     
     plot_grid(p_title4, p5, p6, p7, ncol = 1, rel_heights = c(0.15, 1, 1, 1))
-    ggsave("graphs/"%&%id%&%"&cons"%&%format, height = 8.267, width = 11.692)
+    ggsave(""%&%id%&%"&cons"%&%format, height = 8.267, width = 11.692)
 }
 
 

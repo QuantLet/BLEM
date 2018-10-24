@@ -17,7 +17,7 @@ invisible(lapply(functions, source))
 "%&%"     = function(x, y) {paste(x, y, sep = "")}
 
 # Specify which datasets from directories should be loaded for market analysis
-files_c = substring(list.files("data/consumer/",
+files_c = substring(list.files("../data/consumer/",
                                 pattern = "*.csv"),
                      1, 17)[-c(13, 21, 26, 35, 46, 53, 57, 67, 76, 78, 80, 81)]
 
@@ -27,7 +27,7 @@ i = 0
 
 for(id in files_c) {
     i = i+1
-    cons_true[, i] = getTargets(path    = "data/consumer/",
+    cons_true[, i] = getTargets(path    = "../data/consumer/",
                                  id     = id,
                                  return = "consumption",
                                  min    = "2017-10-01 00:00",
@@ -239,7 +239,7 @@ for(s in scenarios){
              fill = "Legend")
     
     plot_grid(ptitle, p, p1, ncol = 1, rel_heights = c(0.15, 1, 1))
-    ggsave("graphs/totalenergycost"%&%s%&%".pdf",
+    ggsave("totalenergycost"%&%s%&%".jpg",
            height = 8.267/2, width = 11.692)
     
     

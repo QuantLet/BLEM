@@ -30,7 +30,7 @@ predictions_c_naive_all =
     read.csv("predictions/consumer/naive_predictions.csv")[, -1]
 
 # Aggregate data to 15-min intervals and strip timestamps to get true values
-targets = getData(path   = "data/consumer/",
+targets = getData(path   = "../data/consumer/",
                   data   = "all",
                   return = "consumption") %>%
     filter_time("2017-10-01 00:03:00" ~ "2018-01-01 00:00:00") %>%
@@ -53,7 +53,7 @@ n = min(nrow(predictions_c_LSTM_all),
 
 # Create index vector for x-Axis labels
 id = gsub(".*?([0]{5})([0-9]{3}).*", "c\\2",
-                list.files(path = "data/consumer/",
+                list.files(path = "../data/consumer/",
                            pattern = "*.csv"))[-26]
 
 # Compute errors
@@ -139,7 +139,7 @@ p = long_c_LSTM %>%
          fill = "Legend")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/c_barplot_LSTM_overunderestimation.pdf",
+ggsave("c_barplot_LSTM_overunderestimation.jpg",
        height = (8.267/2), width = 11.692)
 
 # LASSO
@@ -184,7 +184,7 @@ p1 = long_c_LASSO %>%
          fill = "Legend")
 
 plot_grid(p_title1, p1, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/c_barplot_LASSO_overunderestimation.pdf",
+ggsave("c_barplot_LASSO_overunderestimation.jpg",
        height = (8.267/2), width = 11.692)
 
 # naive
@@ -229,7 +229,7 @@ p2 = long_c_naive %>%
          fill = "Legend")
 
 plot_grid(p_title2, p2, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/c_barplot_naive_overunderestimation.pdf",
+ggsave("c_barplot_naive_overunderestimation.jpg",
        height = (8.267/2), width = 11.692)
 
 
@@ -245,7 +245,7 @@ predictions_p_naive_all =
     read.csv("predictions/prosumer/naive_predictions.csv")[, -1]
 
 # Aggregate data to 15-min intervals and strip timestamps to get true values
-targets = getData(path    = "data/prosumer/",
+targets = getData(path    = "../data/prosumer/",
                    data   = "all",
                    return = "production") %>%
     filter_time("2017-10-01 00:03:00" ~ "2018-01-01 00:00:00") %>%
@@ -270,7 +270,7 @@ n  = min(nrow(predictions_p_LSTM_all),
 
 # Create index vector for x-Axis labels
 id = gsub(".*?([0]{5})([0-9]{3}).*", "p\\2",
-          list.files(path    = "data/prosumer/",
+          list.files(path    = "../data/prosumer/",
                      pattern = "*.csv"))[c(19, 24, 26, 30, 31, 72,
                                            75,83, 84, 85, 86, 89)]
 
@@ -358,7 +358,7 @@ p3 = long_p_LSTM %>%
          fill = "Legend")
 
 plot_grid(p_title3, p3, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/p_barplot_LSTM_overunderestimation.pdf",
+ggsave("p_barplot_LSTM_overunderestimation.jpg",
        height = (8.267/2), width = 11.692/2)
 
 # LASSO
@@ -404,7 +404,7 @@ p4 = long_p_LASSO %>%
          fill = "Legend")
 
 plot_grid(p_title4, p4, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/p_barplot_LASSO_overunderestimation.pdf",
+ggsave("p_barplot_LASSO_overunderestimation.jpg",
        height = (8.267/2), width = 11.692/2)
 
 # naive
@@ -448,7 +448,7 @@ p5 = long_p_naive %>% ggplot() +
          fill = "Legend")
 
 plot_grid(p_title5, p5, ncol = 1, rel_heights = c(0.15, 1))
-ggsave("graphs/p_barplot_naive_overunderestimation.pdf",
+ggsave("p_barplot_naive_overunderestimation.jpg",
        height = (8.267/2), width = 11.692/2)
 
 

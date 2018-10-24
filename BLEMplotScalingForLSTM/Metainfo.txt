@@ -1,0 +1,24 @@
+
+Name of Quantlet: BLEMplotScalingforLSTM
+
+Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
+
+Description: Plots exemplary the density function of one household's raw energy consumption values and the density function its log energy consumption values scaled between 0 and 1 for a LSTM neural network.
+
+Keywords: household energy prediction, energy consumption, LSTM, machine learning, hyperparameter tuning, Keras, TensorFlow, data scaling, lineplot, density, log-values
+Author: Michael Kostmann
+
+See also:
+- BLEMdataGlimpse
+- BLEMdescStatEnergyData
+- BLEMevaluateEnergyPreds
+- BLEMevaluateMarketSim
+- BLEMmarketSimulation
+- BLEMplotEnergyData
+- BLEMplotEnergyPreds
+- BLEMplotPredErrors
+- BLEMpredictLASSO
+- BLEMpredictNaive
+- BLEMtuneLSTM
+
+Submitted:  26.10.2018

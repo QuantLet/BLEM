@@ -19,7 +19,9 @@ See also:
 - BLEMplotEnergyPreds
 - BLEMplotPredErrors
 - BLEMpredictLASSO
-- BLEMpredictNaive  
+- BLEMpredictNaive
+- BLEMtuneLSTM
+- BLEMplotScalingForLSTM
 
 Submitted:  26.10.2018
 
