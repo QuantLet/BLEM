@@ -206,17 +206,17 @@ for(s in scenarios){
         geom_bar(stat     = "identity",
                  width    = 0.7,
                  position = "dodge") +
-        scale_fill_viridis_d(labels = c("Cost without LEM",
-                                        "Cost with predicted values    ",
-                                        "Cost with true values"),
+        scale_fill_viridis_d(labels = c("cost without LEM",
+                                        "cost with predicted values    ",
+                                        "cost with true values"),
                              end    = 0,
                              begin  = 1) +
         theme_classic(base_size = 10) +
         theme(axis.text.x = element_text(angle = 90,
                                          vjust = 0.5,
                                          size  = 8)) +
-        labs(x    = "Consumer ID",
-             y    = "Total cost in EUR",
+        labs(x    = "consumer ID",
+             y    = "total cost in EUR",
              fill = "Legend")
     
     p1 = ggplot(loss_data_long,
@@ -226,16 +226,16 @@ for(s in scenarios){
         geom_bar(stat     = "identity",
                  width    = 0.7,
                  position = "dodge") +
-        scale_fill_viridis_d(labels = c("Loss due to no LEM",
-                                        "Loss due to prediction errors"),
+        scale_fill_viridis_d(labels = c("loss due to no LEM",
+                                        "loss due to prediction errors"),
                              end    = 0.5,
                              begin  = 1) +
         theme_classic(base_size = 10) +
         theme(axis.text.x = element_text(angle = 90,
                                          vjust = 0.5,
                                          size  = 8)) +
-        labs(x    = "Consumer ID",
-             y    = "Loss in %",
+        labs(x    = "consumer ID",
+             y    = "loss in %",
              fill = "Legend")
     
     plot_grid(ptitle, p, p1, ncol = 1, rel_heights = c(0.15, 1, 1))
