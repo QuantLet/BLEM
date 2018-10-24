@@ -46,18 +46,20 @@ data = getData(path,
 # datasets = colnames(data)[-1]
 
 # b) Plot exemplary consumption time series (5 with large 0 shares + 2 normal)
-# datasets = c("c013_cons", "c035_cons", "c067_cons", "c070_cons",
-#               "c076_cons", "c082_cons", "c015_cons", "c090_cons")
+datasets = c("c013_cons", "c035_cons", "c067_cons", "c070_cons",
+              "c076_cons", "c082_cons", "c015_cons", "c090_cons")
 
 # c) Plot consumers with abnormal consumption patterns
-datasets = c("c021_cons", "c046_cons", "c053_cons", "c057_cons",
-             "c067_cons", "c078_cons", "c080_cons")
+# datasets = c("c021_cons", "c046_cons", "c053_cons", "c057_cons",
+#              "c067_cons", "c078_cons", "c080_cons")
 
 # d) Plot consumption values of all prosumers with positive total production
 # datasets = c("p012_cons", "p015_cons", "p019_cons", "p024_cons", "p026_cons",
 #              "p030_cons", "p031_cons", "p072_cons", "p075_cons", "p083_cons",
 #              "p084_cons", "p085_cons", "p086_cons", "p089_cons")
 
+# e) Plot consumption values of additional prosumers discussed in thesis
+# datasets = c("p004_cons", "p038_cons", "p050_cons", "p061_cons", "p093_cons")
 
 # Specify file format to save plot (.jpg or .pdf)
 format <- ".jpg"
