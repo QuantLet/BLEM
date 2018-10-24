@@ -69,8 +69,8 @@ p       = data_long %>%
     theme_classic(base_size = 12) +
     labs(color = "Legend") +
     scale_color_manual(values=c("black", "steelblue", "springgreen3", "red")) +
-    ylab("Consumption in kWh")+
-    xlab("Timestamp")
+    ylab("kWh")+
+    xlab("timestamp")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
 ggsave("graphs/c011_pred_cons.pdf", height = (8.267/2), width = 11.692)
@@ -127,8 +127,8 @@ p = data_long %>%
     theme_classic(base_size = 12) +
     labs(color = "Legend") +
     scale_color_manual(values=c("black", "steelblue", "springgreen3", "red")) +
-    ylab("Consumption in kWh")+
-    xlab("Timestamp")
+    ylab("kWh")+
+    xlab("timestamp")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
 ggsave("graphs/p024_pred_prod.pdf", height = (8.267/2), width = 11.692)

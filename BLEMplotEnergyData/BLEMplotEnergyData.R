@@ -4,6 +4,9 @@
 ## Author: Michael Kostmann
 
 
+# Set options
+options(scipen = 999)
+
 # Load packages
 packages  = c("data.table",
               "tidyverse",
@@ -53,7 +56,7 @@ datasets = c("c021_cons", "c046_cons", "c053_cons", "c057_cons",
 # d) Plot consumption values of all prosumers with positive total production
 # datasets = c("p012_cons", "p015_cons", "p019_cons", "p024_cons", "p026_cons",
 #              "p030_cons", "p031_cons", "p072_cons", "p075_cons", "p083_cons",
-#              "p084_cons", "p085_cons", "p086_cons", "P089_cons")
+#              "p084_cons", "p085_cons", "p086_cons", "p089_cons")
 
 
 # Specify file format to save plot (.jpg or .pdf)
@@ -73,9 +76,9 @@ for(id in datasets) {
         
         ggplot(aes(time, value)) +
         geom_line(alpha = 0.75) +
-        theme_classic(base_size = 12) +
-        ylab("Consumption in kWh") +
-        xlab("Timestamp") +
+        theme_classic(base_size = 10) +
+        ylab("kWh per 3 minutes") +
+        xlab("timestamp") +
         labs(title = "Full data (01/01/2017 - 01/01/2018)")
     
     p2 <- data[, c("time", eval(id))] %>%
@@ -85,9 +88,9 @@ for(id in datasets) {
         
         ggplot(aes(time, value)) +
         geom_line(alpha = 0.75) +
-        theme_classic(base_size = 12) +
-        ylab("Consumption in kWh") +
-        xlab("Timestamp") +
+        theme_classic(base_size = 10) +
+        ylab("kWh per 3 minutes") +
+        xlab("timestamp") +
         labs(title = "One month (01/05/2017 - 01/06/2017)")
     
     p3 <- data[, c("time", eval(id))] %>%
@@ -97,9 +100,9 @@ for(id in datasets) {
         
         ggplot(aes(time, value)) +
         geom_line(alpha = 0.75) +
-        theme_classic(base_size = 12) +
-        ylab("Consumption in kWh") +
-        xlab("Timestamp") +
+        theme_classic(base_size = 10) +
+        ylab("kWh per 3 minutes") +
+        xlab("timestamp") +
         labs(title = "One day (13/05/2017 00:00 - 13/05/2017 23:57)")
     
     plot_grid(p_title1, p1, p2, p3, ncol = 1, rel_heights = c(0.15, 1, 1, 1))
@@ -149,9 +152,9 @@ for(id in datasets_cp) {
         scale_colour_manual("",
                             breaks = c("net production", "net consumption"),
                             values = c("darkblue", "red")) +
-        theme_classic(base_size = 12) +
-        ylab("kWh") +
-        xlab("Timestamp") +
+        theme_classic(base_size = 10) +
+        ylab("kWh per 3 minutes") +
+        xlab("timestamp") +
         labs(title = "Full data (01/01/2017 - 01/01/2018)")
     
     p6 <- data_prod[, c("time", eval(id))] %>%
@@ -171,9 +174,9 @@ for(id in datasets_cp) {
         scale_colour_manual("",
                             breaks = c("net production", "net consumption"),
                             values = c("darkblue", "red")) +
-        theme_classic(base_size = 12) +
-        ylab("kWh") +
-        xlab("Timestamp") +
+        theme_classic(base_size = 10) +
+        ylab("kWh per 3 minutes") +
+        xlab("timestamp") +
         labs(title = "One month (01/05/2017 - 01/06/2017)")
     
     p7 <- data_prod[, c("time", eval(id))] %>%
@@ -193,9 +196,9 @@ for(id in datasets_cp) {
         scale_colour_manual("",
                             breaks = c("net production", "net consumption"),
                             values = c("darkblue", "red")) +
-        theme_classic(base_size = 12) +
-        ylab("kWh") +
-        xlab("Timestamp") +
+        theme_classic(base_size = 10) +
+        ylab("kWh per 3 minutes") +
+        xlab("timestamp") +
         labs(title = "One day (13/05/2017 00:00 - 13/05/2017 23:57)")
     
     plot_grid(p_title4, p5, p6, p7, ncol = 1, rel_heights = c(0.15, 1, 1, 1))
