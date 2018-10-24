@@ -1,0 +1,6 @@
+"","X1"
+"1","Cost without LEM (in EUR)"
+"2","Cost predicted values (in EUR)"
+"3","Cost true values (in EUR)"
+"4","Savings due to LEM (in %)"
+"5","Loss due to pred. errors (in %)"
