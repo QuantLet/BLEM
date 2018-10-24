@@ -1,5 +1,5 @@
 
-Name of Quantlet: BLEMplotScalingforLSTM
+Name of Quantlet: BLEMplotScaling
 
 Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
 
