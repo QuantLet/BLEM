@@ -28,7 +28,7 @@ Input:
 - predictions: 15-minute interval prediction of electricity consumption for every consumer forecasted with LASSO model (csv-file)
 
 Output:
-market outcomes for each trading period (15-minute slots) in the three months testing period. I.e.,
+- market outcomes for each trading period (15-minute slots) in the three months testing period. I.e.,
 - equilibrium price: the highest price which can still be served given the amounts offered by producers 
 - local energy market price: average of equilibrium price and maximum price weighted by kWh amounts traded at the respective price
 - bid results for every market participate acting as consumer:
