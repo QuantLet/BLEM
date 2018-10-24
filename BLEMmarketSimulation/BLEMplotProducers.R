@@ -58,7 +58,7 @@ for(i in 1:length(files_p)){
         geom_line() +
         scale_y_continuous(limits = c(0, max(prod))) +
         ylab("kWh/15 minutes") +
-        xlab("Timestamp") +
+        xlab("timestamp") +
         theme_classic(base_size = 8)
     
     plotgrids[[i]] = plot_grid(p_title, p, ncol = 1, rel_heights = c(0.1, 1))

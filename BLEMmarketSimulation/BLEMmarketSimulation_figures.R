@@ -7,7 +7,8 @@
 rm(list=ls())
 
 # Load packages
-packages  = c("cowplot")
+packages  = c("cowplot",
+              "purrr")
 invisible(lapply(packages, library, character.only = TRUE))
 
 # Function for easy string pasting
@@ -58,8 +59,8 @@ for(i in scenarios){
         ggplot() +
         geom_line(aes(x = time, y = oversupply)) +
         geom_hline(yintercept = 0, col = "red") +
-        ylab("Oversupply in kWh") +
-        xlab("Timestamp") +
+        ylab("oversupply in kWh") +
+        xlab("timestamp") +
         theme_classic(base_size = 10)
     
     p2 = data_true %>%
@@ -67,8 +68,8 @@ for(i in scenarios){
         geom_line(aes(x = time, y = eq_price)) +
         geom_hline(yintercept = 12.31, col = "red") +
         geom_hline(yintercept = 28.69, col = "red") +
-        ylab("Equilibrium price in EURct") +
-        xlab("Timestamp") +
+        ylab("equilibrium price in EURct") +
+        xlab("timestamp") +
         theme_classic(base_size = 10)
     
     p3 = data_true %>%
@@ -77,7 +78,7 @@ for(i in scenarios){
         geom_hline(yintercept = 12.31, col = "red") +
         geom_hline(yintercept = 28.69, col = "red") +
         ylab("LEM price in EURct") +
-        xlab("Timestamp") +
+        xlab("timestamp") +
         theme_classic(base_size = 10)
     
     plot_grid(ptitle, p1, p2, p3, ncol = 1, rel_heights = c(0.15, 1, 1, 1))
@@ -115,8 +116,8 @@ for(i in scenarios){
         ggplot() +
         geom_line(aes(x = time, y = oversupply)) +
         geom_hline(yintercept = 0, col = "red") +
-        ylab("Oversupply in kWh") +
-        xlab("Timestamp") +
+        ylab("oversupply in kWh") +
+        xlab("timestamp") +
         theme_classic(base_size = 10)
     
     p2 = data_pred %>%
@@ -124,8 +125,8 @@ for(i in scenarios){
         geom_line(aes(x = time, y = eq_price)) +
         geom_hline(yintercept = 12.31, col = "red") +
         geom_hline(yintercept = 28.69, col = "red") +
-        ylab("Equilibrium price in EURct") +
-        xlab("Timestamp") +
+        ylab("equilibrium price in EURct") +
+        xlab("timestamp") +
         theme_classic(base_size = 10)
     
     p3 = data_pred %>%
@@ -134,7 +135,7 @@ for(i in scenarios){
         geom_hline(yintercept = 12.31, col = "red") +
         geom_hline(yintercept = 28.69, col = "red") +
         ylab("LEM price in EURct") +
-        xlab("Timestamp") +
+        xlab("timestamp") +
         theme_classic(base_size = 10)
     
     plot_grid(ptitle, p1, p2, p3, ncol = 1, rel_heights = c(0.15, 1, 1, 1))
