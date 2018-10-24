@@ -134,8 +134,8 @@ p = long_c_LSTM %>%
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5,
                                      size  = 8)) +
-    labs(x    = "Consumer ID",
-         y    = "Sum of errors in kWh",
+    labs(x    = "consumer ID",
+         y    = "sum of errors in kWh",
          fill = "Legend")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
@@ -179,8 +179,8 @@ p1 = long_c_LASSO %>%
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5,
                                      size  = 8)) +
-    labs(x    = "Consumer ID",
-         y    = "Sum of errors in kWh",
+    labs(x    = "consumer ID",
+         y    = "sum of errors in kWh",
          fill = "Legend")
 
 plot_grid(p_title1, p1, ncol = 1, rel_heights = c(0.15, 1))
@@ -224,8 +224,8 @@ p2 = long_c_naive %>%
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5,
                                      size  = 8)) +
-    labs(x    = "Consumer ID",
-         y    = "Sum of errors in kWh",
+    labs(x    = "consumer ID",
+         y    = "sum of errors in kWh",
          fill = "Legend")
 
 plot_grid(p_title2, p2, ncol = 1, rel_heights = c(0.15, 1))
@@ -354,7 +354,7 @@ p3 = long_p_LSTM %>%
                                      vjust = 0.5,
                                      size  = 8)) +
     labs(x    = "prosumer ID",
-         y    = "Sum of errors in kWh",
+         y    = "sum of errors in kWh",
          fill = "Legend")
 
 plot_grid(p_title3, p3, ncol = 1, rel_heights = c(0.15, 1))
@@ -399,8 +399,8 @@ p4 = long_p_LASSO %>%
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5,
                                      size  = 8)) +
-    labs(x    = "Prosumer ID",
-         y    = "Sum of errors in kWh",
+    labs(x    = "prosumer ID",
+         y    = "sum of errors in kWh",
          fill = "Legend")
 
 plot_grid(p_title4, p4, ncol = 1, rel_heights = c(0.15, 1))
@@ -443,8 +443,8 @@ p5 = long_p_naive %>% ggplot() +
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5,
                                      size  = 8)) +
-    labs(x    = "Prosumer ID",
-         y    = "Sum of errors in kWh",
+    labs(x    = "prosumer ID",
+         y    = "sum of errors in kWh",
          fill = "Legend")
 
 plot_grid(p_title5, p5, ncol = 1, rel_heights = c(0.15, 1))
