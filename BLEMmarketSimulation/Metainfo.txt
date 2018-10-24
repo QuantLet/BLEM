@@ -1,7 +1,7 @@
 
 Name of Quantlet: BLEMmarketSimulation
 
-Published in: Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets
+Published in: 'Forecasting in blockchain-based smart grids: Testing a prerequisite for the implementation of local energy markets'
 
 Description: Simulates the market mechanism (blind double auction), which was implemented by Mengelkamp et al. (2018) in smart contract on a private Ethereum Blockchain, with real consumption and production data in three different supply scenarios (balanced, over-, and undersupply) and with true and predicted energy consumption values.
 
