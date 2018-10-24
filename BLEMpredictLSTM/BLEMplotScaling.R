@@ -49,8 +49,8 @@ p1 = ggplot(data, aes(cons*10^-10)) +
     theme_classic(base_size = 12) +
     scale_x_continuous(expand = c(0, 0)) +
     scale_y_continuous(expand = expand_scale(mult = c(0, 0.1))) +
-    ylab("Density") +
-    xlab("Energy consumption in kWh") +
+    ylab("density") +
+    xlab("kWh") +
     labs(title   = "True values",
          caption = "Kernel = Epanechnikov, bandwidth = 1.71 x 10^-5")
 
@@ -63,8 +63,8 @@ p3 = ggplot(data, aes((log(cons)-data_min)/(data_max-data_min))) +
     theme_classic(base_size = 12) +
     scale_x_continuous(expand = c(0, 0)) +
     scale_y_continuous(expand = expand_scale(mult = c(0, 0.1))) +
-    ylab("Density") +
-    xlab("Log energy consumption scaled between 0 and 1") +
+    ylab("density") +
+    xlab("Log of kWh scaled between 0 and 1") +
     labs(title   = "Log values scaled between 0 and 1",
          caption = "Kernel = Epanechnikov, bandwidth = 0.0019")
 
