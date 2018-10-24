@@ -59,7 +59,7 @@ id_cons    = gsub(".*?([0]{5})([0-9]{3}).*", "c\\2",
 df_total_c = data.frame(total_c, id_cons)
 
 p_title    = ggdraw() + 
-    draw_label("Consumers' total energy consumption",
+    draw_label("Consumers' total energy consumption in 2017",
                size = 18,
                fontface = "bold")
 
@@ -70,8 +70,8 @@ p          = df_total_c %>%
     theme_classic(base_size = 12) +
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5)) +
-    ylab("Total consumption in 2017") +
-    xlab("Consumer ID")
+    ylab("kWh") +
+    xlab("consumer ID")
 
 plot_grid(p_title, p, ncol = 1, rel_heights = c(0.15, 1))
 ggsave("graphs/consumer_totalconsumption.pdf",
@@ -97,7 +97,7 @@ data_cons_long = data_cons_ord %>%
 
 # Plot boxplots of all consumers in one graph
 p_title1 = ggdraw() + 
-    draw_label("Distribution of energy consumption across consumers",
+    draw_label("Distribution of energy consumption per consumers",
                size     = 16,
                fontface = "bold")
 
@@ -109,7 +109,8 @@ p1 = data_cons_long %>%
     scale_x_discrete(labels = id_cons_ord) + 
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5)) +
-    ylab("energy consumption in kWh per 3 minutes")
+    ylab("kWh per 3 minutes") +
+    xlab("consumer ID")
 
 plot_grid(p_title1, p1, ncol = 1, rel_heights = c(0.15, 1))
 ggsave("graphs/consumer_boxplots_consumption.jpg",
@@ -152,7 +153,7 @@ id_pros         = gsub(".*?([0]{5})([0-9]{3}).*", "p\\2",
 df_total_pros_c = data.frame(total_pros_c, id_pros)
 
 p_title2        = ggdraw() + 
-    draw_label("Prosumers' total energy consumption",
+    draw_label("Prosumers' total energy consumption in 2017",
                size     = 18,
                fontface = "bold")
 
@@ -163,8 +164,8 @@ p2              = df_total_pros_c %>%
     theme_classic(base_size = 12) +
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5)) +
-    ylab("Total consumption in 2017") +
-    xlab("Prosumer ID")
+    ylab("kWh") +
+    xlab("prosumer ID")
 
 plot_grid(p_title2, p2, ncol = 1, rel_heights = c(0.15, 1))
 ggsave("graphs/prosumer_totalconsumption.pdf",
@@ -189,7 +190,7 @@ data_pros_c_long = data_pros_c_ord %>%
 
 # Plot boxplots of all consumers in one graph
 p_title2 = ggdraw() + 
-    draw_label("Distribution of net energy consumption across prosumers",
+    draw_label("Distribution of net energy consumption per prosumer",
                size     = 16,
                fontface = "bold")
 
@@ -201,7 +202,8 @@ p2       = data_pros_c_long %>%
     scale_x_discrete(labels = id_pros_ord) + 
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5)) +
-    ylab("net energy production in kWh per 3 minutes")
+    ylab("kWh per 3 minutes") +
+    xlab("prosumer ID")
 
 plot_grid(p_title2, p2, ncol = 1, rel_heights = c(0.15, 1))
 ggsave("graphs/prosumer_boxplots_consumption.jpg",
@@ -241,7 +243,7 @@ id              = gsub(".*?([0]{5})([0-9]{3}).*", "p\\2",
 df_total_pros_p = data.frame(total_pros_p, id)
 
 p_title3        = ggdraw() + 
-    draw_label("Prosumers' total energy production", size = 18,
+    draw_label("Prosumers' total energy production in 2017", size = 18,
                fontface = "bold")
 
 p4              = df_total_pros_p %>%
@@ -251,8 +253,8 @@ p4              = df_total_pros_p %>%
     theme_classic(base_size = 12) +
     theme(axis.text.x = element_text(angle = 90,
                                      vjust = 0.5)) +
-    ylab("Total production in 2017") +
-    xlab("Prosumer ID")
+    ylab("kWh") +
+    xlab("prosumer ID")
 
 plot_grid(p_title3, p4, ncol = 1, rel_heights = c(0.15, 1))
 ggsave("graphs/prosumer_totalproduction.pdf",
