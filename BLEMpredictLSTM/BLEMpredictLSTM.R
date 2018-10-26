@@ -25,21 +25,14 @@ invisible(lapply(functions, source))
 "%&%"     = function(x, y) {paste(x, y, sep = "")}
 
 # Specify path to directory containing consumer datasets
-path      = "../data/consumer"  #use this path if using windows
-#path      = "../data/consumer/"  #use this path if using mac
+path      = "../data/consumer/"
 
 # Set index to number between 1 and 100 to select individual dataset;
 # if all consumer datasets should be used, set index to -26
-
-#for windows
-files = paste0("/", substring(list.files(path, pattern = "*.csv"), 1, 17))[-26]
-
-#for mac
-#files = substring(list.files(path, pattern = ".csv"), 1, 17)[-26]
+files = substring(list.files(path, pattern = ".csv"), 1, 17)[-26]
 
 for(id in files) {
-    id = substring(id, 1, 18) #for windows
-    #id = substring(id, 1, 17) #for mac
+    id = substring(id, 1, 17)
     
     # Get data
     unscaled = getData(path   = path,
@@ -162,23 +155,17 @@ for(id in files) {
                 callbacks        = callbacks
             ))
     
-    # for windows
+    # Save model
     model_best %>%
-        save_model_hdf5("models/consumption"%&%id%&%".hdf5")
-    
-    # for mac
-    # model_best %>%
-    #     save_model_hdf5("models/consumption/"%&%id%&%".hdf5")
+        save_model_hdf5("models/consumption/"%&%id%&%".hdf5")
     
     
     
     ###  Model evaluation  ###
     
-    # for windows
-    pred_model = load_model_hdf5("models/consumption"%&%id%&%".hdf5")
     
-    # for mac
-    #pred_model = load_model_hdf5("models/consumption/"%&%id%&%".hdf5")
+    # Load trained model
+    pred_model = load_model_hdf5("models/consumption/"%&%id%&%".hdf5")
     
     # Set parameters
     min_index_test = which(unscaled$time == "2017-09-24 00:00")
@@ -258,27 +245,17 @@ write.csv(lstm_all_predictions, "output/consumer/LSTM_predictions.csv")
 rm(list = setdiff(ls(), lsf.str()))
 
 # Specify path to directory containing prosumer datasets
-path      = "../data/prosumer"  #use this path if using windows
-#path      = "../data/prosumer/"  #use this path if using mac
+path      = "../data/prosumer/"
 
 # Set index to number between 1 and 100 to select individual dataset;
 # if all consumer datasets should be used, set index to -26
-
-#for windows
-files = paste0("/", substring(list.files(path, pattern = "*.csv"),
-                              1,
-                              17))[c(19, 24, 26, 30, 31, 72,
-                                     75, 83, 84, 85, 86, 89)]
-
-#for mac
-#files = substring(list.files(path, pattern = ".csv"),
-#                   1,
-#                   17)[c(19, 24, 26, 30, 31, 72,
-#                         75, 83, 84, 85, 86, 89)]
+files = substring(list.files(path, pattern = ".csv"),
+                  1,
+                  17)[c(19, 24, 26, 30, 31, 72,
+                        75, 83, 84, 85, 86, 89)]
 
 for(id in files) {
-    id = substring(id, 1, 18) #for windows
-    #id = substring(id, 1, 17) #for mac
+    id = substring(id, 1, 17)
     
     # Get data
     unscaled = getData(path   = path,
@@ -401,23 +378,16 @@ for(id in files) {
                 callbacks        = callbacks
             ))
     
-    # for windows
+    # Save model
     model_best %>%
-        save_model_hdf5("models/production"%&%id%&%".hdf5")
-    
-    # for mac
-    # model_best %>%
-    #     save_model_hdf5("models/production/"%&%id%&%".hdf5")
+        save_model_hdf5("models/production/"%&%id%&%".hdf5")
     
     
     
     ###  Model evaluation  ###
     
-    # for windows
-    pred_model = load_model_hdf5("models/production"%&%id%&%".hdf5")
-    
-    # for mac
-    #pred_model = load_model_hdf5("models/production/"%&%id%&%".hdf5")
+    # Load trained model
+    pred_model = load_model_hdf5("models/production/"%&%id%&%".hdf5")
     
     # Set parameters
     min_index_test = which(unscaled$time == "2017-09-24 00:00")
