@@ -38,13 +38,20 @@ getData = function(path, data = "all", id = NULL, return = "consumption") {
         stop(x, call. = FALSE)
     }
     
+    # file.exists-function that is robust to macOS/windows OS differences
+    robust.file.exists <- function(x) { 
+        if (.Platform$OS == "windows" && grepl("[/\\]$", x)) { 
+            file.exists(dirname(x)) 
+        } else file.exists(x) 
+    } 
+    
     # Check wether "path" and "id" are correctly specified
-    if(!file.exists(path)) {
+    if(!robust.file.exists(path)) {
         stop_nobrowser("Path not specified correctly: "
                        %&%path%&%" does not exist.")}
     
     if(data == "single"){
-        if(!file.exists(path%&%id%&%".csv")) {
+        if(!robust.file.exists(path%&%id%&%".csv")) {
             stop_nobrowser("id not specified correctly: "
                            %&%"File "%&%path%&%id%&%".csv does not exist")
         }
@@ -71,7 +78,7 @@ getData = function(path, data = "all", id = NULL, return = "consumption") {
                }
     
     # Check wether path is correct
-    if(!file.exists(path%&%files[1])) {stop_nobrowser("Path should end with '/'")}
+    if(!robust.file.exists(path%&%files[1])) {stop_nobrowser("Path should end with '/'")}
     
     # Read in first dataset listed in "files"
     df      = fread(path%&%files[1],
