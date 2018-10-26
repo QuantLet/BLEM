@@ -18,13 +18,6 @@ functions = c("FUN_getData.R",
 invisible(lapply(functions, source))
 
 # Specify random dataset to tune models on
-
-# For windows
-# path = "../data/consumer"
-# files = list.files(path, pattern = ".csv")
-# id    = paste0("/", substring(sample(files, 1), 1, 17))
-
-# For Mac
 path  = "../data/consumer/"
 files = list.files(path, pattern = ".csv")
 id    = substring(sample(files, 1), 1, 17)

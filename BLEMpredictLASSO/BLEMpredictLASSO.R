@@ -21,17 +21,11 @@ functions = c("FUN_getData.R",
 invisible(lapply(functions, source))
 
 # Specify path to directory with consumer datasets
-path      = "../data/consumer"  #use this path if using windows
-#path      = "../data/consumer/"  #use this path if using mac
+path      = "../data/consumer/"
 
 # Set index to number between 1 and 100 to select individual dataset;
 # if all consumer datasets should be used, set index to -26
-
-#use this path if using windows
-files = paste0("/", substring(list.files(path, pattern = "*.csv"), 1, 17))[-26]
-
-#use this path if using mac
-#files = substring(list.files(path, pattern = "*.csv"), 1, 17)[-26]
+files = substring(list.files(path, pattern = "*.csv"), 1, 17)[-26]
 
 # Initialize progress bar, set seed, register cores
 pb = txtProgressBar(min = 0, max = length(files), style = 3)
@@ -132,23 +126,14 @@ write.csv(lasso_all_predictions, "output/consumer/LASSO_predictions.csv")
 rm(list = setdiff(ls(), lsf.str()))
 
 # Specify path to directory with prosumer datasets
-path      = "../data/prosumer"  #use this path if using windows
-#path      = "../data/prosumer/"  #use this path if using mac
+path      = "../data/prosumer/"
 
 # Set index to number between 1 and 100 to select individual dataset;
 # if all consumer datasets should be used, set index to -26
-
-#use this path if using windows
-files = paste0("/", substring(list.files(path, pattern = "*.csv"),
-                              1,
-                              17))[c(19, 24, 26, 30, 31, 72,
-                                     75, 83, 84, 85, 86, 89)]
-
-#use this path if using mac
-#files = substring(list.files(path, pattern = "*.csv"),
-#                   1,
-#                   17)[c(19, 24, 26, 30, 31, 72,
-#                         75, 83, 84, 85, 86, 89)]
+files = substring(list.files(path, pattern = "*.csv"),
+                  1,
+                  17)[c(19, 24, 26, 30, 31, 72,
+                        75, 83, 84, 85, 86, 89)]
 
 # Initialize progress bar, set seed, register cores
 pb = txtProgressBar(min = 0, max = length(files), style = 3)
