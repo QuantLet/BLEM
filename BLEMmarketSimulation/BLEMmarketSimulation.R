@@ -208,7 +208,7 @@ rm(list = setdiff(ls(), lsf.str()))
 
 # Set vector
 scenarios = c("_balanced", "_oversupply", "_undersupply")
-captions  = c("Balanced supply", "Oversupply", "Undersuppy")
+captions  = c("Balanced supply", "Oversupply", "Undersupply")
 
 # Index for captions
 c = 0
@@ -243,7 +243,7 @@ for(i in scenarios){
     c = c+1
     ptitle = ggdraw() +
         draw_label(captions[c]%&%": Market outcomes per trading period"%&%
-                       "with true consumption values",
+                       " with true consumption values",
                    size     = 16,
                    fontface = "bold")
     
