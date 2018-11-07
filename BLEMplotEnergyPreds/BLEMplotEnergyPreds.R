@@ -59,7 +59,7 @@ data_long = melt(data[(26*24*4):(27*24*4), ], id.vars = "time")
 
 p_title = ggdraw() + 
     draw_label(paste0("Consumer 011: True and predicted consumption",
-                      " in kWh per 15-minute interval"),
+                      " in kWh per 15-minutes interval"),
                size = 16,
                fontface = "bold")
 
@@ -117,7 +117,7 @@ data_long = melt(data[(83*24*4):(84*24*4), ], id.vars = "time")
 
 p_title = ggdraw() + 
     draw_label(paste0("Prosumer 024: True and predicted production", 
-                      " in kWh per 15-minute interval"),
+                      " in kWh per 15-minutes interval"),
                size = 16,
                fontface = "bold")
 
