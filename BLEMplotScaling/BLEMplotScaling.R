@@ -35,8 +35,8 @@ c           = substring(id, 15,17)
 
 # Plotting
 p_title1 = ggdraw() + 
-    draw_label("Consumer "%&%c%&%": Distribution of 3-minute"%&%
-                      "energy consumption readings",
+    draw_label("Consumer "%&%c%&%": Distribution of 3-minutes"%&%
+                      " energy consumption readings",
                size     = 16,
                fontface = "bold")
 
