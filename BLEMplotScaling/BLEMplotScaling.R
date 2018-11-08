@@ -35,8 +35,8 @@ c           = substring(id, 15,17)
 
 # Plotting
 p_title1 = ggdraw() + 
-    draw_label("Consumer "%&%c%&%": Distribution of 3-minute"%&%
-                      "energy consumption readings",
+    draw_label("Consumer "%&%c%&%": Distribution of 3-minutes"%&%
+                      " energy consumption readings",
                size     = 16,
                fontface = "bold")
 
@@ -61,6 +61,7 @@ p3 = ggplot(data, aes((log(cons)-data_min)/(data_max-data_min))) +
                  adjust = 2,
                  kernel = "epanechnikov") +
     theme_classic(base_size = 12) +
+    theme(axis.title.y = element_text(margin = margin(r = 35))) +
     scale_x_continuous(expand = c(0, 0)) +
     scale_y_continuous(expand = expand_scale(mult = c(0, 0.1))) +
     ylab("density") +
