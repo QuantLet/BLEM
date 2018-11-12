@@ -47,7 +47,7 @@ data = getData(path,
 
 # b) Plot exemplary consumption time series (5 with large 0 shares + 2 normal)
 datasets = c("c013_cons", "c035_cons", "c067_cons", "c070_cons",
-              "c076_cons", "c082_cons", "c015_cons", "c090_cons")
+             "c076_cons", "c082_cons", "c015_cons", "c090_cons")
 
 # c) Plot consumers with abnormal consumption patterns
 # datasets = c("c021_cons", "c046_cons", "c053_cons", "c057_cons",
@@ -62,17 +62,17 @@ datasets = c("c013_cons", "c035_cons", "c067_cons", "c070_cons",
 # datasets = c("p004_cons", "p038_cons", "p050_cons", "p061_cons", "p093_cons")
 
 # Specify file format to save plot (.jpg or .pdf)
-format <- ".jpg"
+format = ".jpg"
 
 # Loop over specified datasets plot and save plots
 for(id in datasets) {
     
-    p_title1 <- ggdraw() + 
+    p_title1 = ggdraw() + 
         draw_label("Consumer "%&%substr(id, 2, 4)%&%": Energy consumption",
                    size     = 18,
                    fontface = "bold")
     
-    p1 <- data[, c("time", eval(id))] %>%
+    p1 = data[, c("time", eval(id))] %>%
         rename(value := !!(id)) %>%
         select(time, value) %>%
         
@@ -83,7 +83,7 @@ for(id in datasets) {
         xlab("timestamp") +
         labs(title = "Full data (01/01/2017 - 01/01/2018)")
     
-    p2 <- data[, c("time", eval(id))] %>%
+    p2 = data[, c("time", eval(id))] %>%
         rename(value := !!(id)) %>%
         select(time, value) %>%
         filter_time("2017-05-01" ~ "2017-06-01") %>%
@@ -95,7 +95,7 @@ for(id in datasets) {
         xlab("timestamp") +
         labs(title = "One month (01/05/2017 - 01/06/2017)")
     
-    p3 <- data[, c("time", eval(id))] %>%
+    p3 = data[, c("time", eval(id))] %>%
         rename(value := !!(id)) %>%
         select(time, value) %>%
         filter_time("2017-05-13 00:00:00" ~ "2017-05-13 23:57:00") %>%
@@ -129,17 +129,17 @@ datasets_cp = c("p012_prod", "p015_prod", "p019_prod", "p024_prod", "p026_prod",
                 "p084_prod", "p085_prod", "p086_prod", "p089_prod")
 
 # Specify file format to save plot (.jpg or .pdf)
-format <- ".jpg"
+format = ".jpg"
 
 # Loop over specified datasets plot and save plots
 for(id in datasets_cp) {
-    p_title4 <- ggdraw() + 
+    p_title4 = ggdraw() + 
         draw_label("Prosumer "%&%substr(id, 2, 4)%&%
-                   ": Net energy production and consumption",
+                       ": Net energy production and consumption",
                    size     = 18,
                    fontface = "bold")
     
-    p5 <- data_prod[, c("time", eval(id))] %>%
+    p5 = data_prod[, c("time", eval(id))] %>%
         rename(prod := !!(id)) %>%
         select(time, prod) %>%
         
@@ -159,7 +159,7 @@ for(id in datasets_cp) {
         xlab("timestamp") +
         labs(title = "Full data (01/01/2017 - 01/01/2018)")
     
-    p6 <- data_prod[, c("time", eval(id))] %>%
+    p6 = data_prod[, c("time", eval(id))] %>%
         rename(prod := !!(id)) %>%
         select(time, prod) %>%
         filter_time("2017-05-01" ~ "2017-06-01") %>%
@@ -181,7 +181,7 @@ for(id in datasets_cp) {
         xlab("timestamp") +
         labs(title = "One month (01/05/2017 - 01/06/2017)")
     
-    p7 <- data_prod[, c("time", eval(id))] %>%
+    p7 = data_prod[, c("time", eval(id))] %>%
         rename(prod := !!(id)) %>%
         select(time, prod) %>%
         filter_time("2017-05-13 00:00:00" ~ "2017-05-13 23:57:00") %>%
