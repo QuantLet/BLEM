@@ -368,7 +368,7 @@ for(id in files) {
     
     system.time(
         history_simple <- model_best %>% # does not work with '='
-            # as assignment operator
+                                         # as assignment operator
             fit_generator(
                 train_gen,
                 steps_per_epoch  = train_steps,

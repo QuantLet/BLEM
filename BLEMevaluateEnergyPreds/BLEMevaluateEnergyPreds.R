@@ -34,8 +34,8 @@ remove   = c(13, 21, 34, 45, 52, 56, 66, 75, 77, 79, 81)
 
 # Load error measures
 error_measures_c = loadErrorMeasures("predictions/consumer/",
-                                      return = measures_c,
-                                      remove = remove)
+                                     return = measures_c,
+                                     remove = remove)
 
 # Create index vector for x-Axis labels
 id_c = read.csv("consumer_labels.csv",
@@ -81,12 +81,12 @@ for(i in measures_c) {
            height = (8.267/4), width = 11.692)
     
     # Plot boxplot
-    p_title_b <- ggdraw() + 
+    p_title_b = ggdraw() + 
         draw_label("Boxplots of "%&%i%&%" for consumption predictions",
                    size     = 16,
                    fontface = "bold")
     
-    p_b <- long %>%
+    p_b = long %>%
         ggplot(aes(variable, value)) +
         geom_boxplot(aes(variable, value)) +
         scale_y_continuous(limits = quantile(long$value,
@@ -174,21 +174,21 @@ for(i in measures_median) {
                    fontface = "bold")
     
     p1 = long %>% 
-         ggplot(aes(ID, variable)) + 
-         geom_tile(aes(fill = value),
-                   color = "white") +
-         scale_x_discrete(expand = c(0, 0)) +
-         scale_y_discrete(expand = c(0, 0)) +
-         scale_fill_viridis_c(begin = 1,
-                              end = 0,
-                              option = "viridis",
-                              name = i) +
-         theme_minimal(base_size = 12) +
-         theme(axis.title.y = element_blank(),
-               axis.text.x  = element_text(angle = 90,
-                                           vjust = 0.5,
-                                           size  = 8)) +
-         xlab("consumer ID")
+        ggplot(aes(ID, variable)) + 
+        geom_tile(aes(fill = value),
+                  color = "white") +
+        scale_x_discrete(expand = c(0, 0)) +
+        scale_y_discrete(expand = c(0, 0)) +
+        scale_fill_viridis_c(begin = 1,
+                             end = 0,
+                             option = "viridis",
+                             name = i) +
+        theme_minimal(base_size = 12) +
+        theme(axis.title.y = element_blank(),
+              axis.text.x  = element_text(angle = 90,
+                                          vjust = 0.5,
+                                          size  = 8)) +
+        xlab("consumer ID")
     
     plot_grid(p_title1, p1, ncol = 1, rel_heights = c(0.15, 1))
     ggsave("c_heatmap_"%&%i%&%".jpg",
@@ -205,8 +205,8 @@ measures_p  = c("MAE", "MASE", "RMSE")
 
 # Load error measures
 error_measures_p = loadErrorMeasures("predictions/prosumer/",
-                                      return = measures_p,
-                                      remove = NULL)
+                                     return = measures_p,
+                                     remove = NULL)
 
 # Create index vector for x-Axis labels
 id_p = read.csv("prosumer_labels.csv",
@@ -253,12 +253,12 @@ for(i in measures_p) {
            height = (8.267/4), width = 11.692)
     
     # Plot boxplot
-    p_title2_b <- ggdraw() + 
+    p_title2_b = ggdraw() + 
         draw_label("Boxplots of "%&%i%&%" for production predictions",
                    size     = 16,
                    fontface = "bold")
     
-    p2_b <- long %>%
+    p2_b = long %>%
         ggplot(aes(variable, value)) +
         geom_boxplot(aes(variable, value)) +
         theme_classic(base_size = 12) +
