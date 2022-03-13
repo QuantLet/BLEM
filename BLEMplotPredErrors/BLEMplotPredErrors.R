@@ -5,7 +5,7 @@
 
 
 # Load packages
-packages  = c("cowplot",
+packages  = c("cowplot", "tibbletime",
               "tidyverse")
 invisible(lapply(packages, library, character.only = TRUE))
 
