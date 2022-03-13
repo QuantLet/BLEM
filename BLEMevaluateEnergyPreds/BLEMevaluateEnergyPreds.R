@@ -9,7 +9,7 @@
 options(scipen = 999)
 
 # Load packages
-packages  = c("reshape",
+packages  = c("reshape", "ggplot2"
               "cowplot")
 invisible(lapply(packages, library, character.only = TRUE))
 
